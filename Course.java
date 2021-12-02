@@ -1,0 +1,17 @@
+public class Course {
+    protected Obstacle[] obstacles;
+
+    public Course(Obstacle... obstacles){
+        this.obstacles = obstacles;
+    }
+
+    public void go(Team team){
+        for (Player p : team.getTeammates()) {
+            for (Obstacle o : obstacles) {
+                o.doIt(p);
+                if (!p.isOnDistance())
+                    break;
+            }
+        }
+    }
+}
