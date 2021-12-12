@@ -34,7 +34,7 @@ public class Main {
         };
 
         try {
-            System.out.println(arrSum(strings));
+            System.out.println(arrSum(sub));
         } catch (MyArrayDataException e) {
             e.printStackTrace();
         } catch (MyArraySizeException e) {
@@ -53,7 +53,7 @@ public class Main {
 
         for (int i = 0; i < myArray.length; i++) {
             if (myArray[i].length != 4) {
-                throw new MyArraySizeException("j-size does not fit");
+                throw new MyArraySizeException("j-size does not fit at line #" + (i + 1));
             }
         }
 
